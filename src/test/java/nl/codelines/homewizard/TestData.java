@@ -1,6 +1,7 @@
 package nl.codelines.homewizard;
 
 import nl.codelines.homewizard.model.Measurement;
+import nl.codelines.homewizard.model.State;
 
 public class TestData {
     public static final Measurement HWE_P1 = new Measurement(
@@ -53,4 +54,9 @@ public class TestData {
         null,
         null
     );
+
+    public static final State STATE = new State(
+        true,
+        false,
+        255);
 }

@@ -3,6 +3,8 @@ package nl.codelines.homewizard.model;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class State {
     private final boolean powerOn;
@@ -37,5 +39,18 @@ public class State {
                 ", switchLock=" + switchLock +
                 ", brightness=" + brightness +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        State state = (State) o;
+        return powerOn == state.powerOn && switchLock == state.switchLock && brightness == state.brightness;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(powerOn, switchLock, brightness);
     }
 }

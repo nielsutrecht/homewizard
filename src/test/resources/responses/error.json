@@ -1,0 +1,6 @@
+{
+  "error": {
+    "id": 7,
+    "description": "brightness value limited to 0-255"
+  }
+}
